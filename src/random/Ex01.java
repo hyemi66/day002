@@ -39,13 +39,18 @@ public class Ex01 {
 		
 		// HashMap방식
 		HashMap<Integer, Integer> hm = new HashMap<>();
-		int num03, index=0, count=0;
+		int num03, index=0;
 		while(true) {
 			double ran = Math.random();
 			num03 = (int)(ran*6+1);
 			hm.put(index, num03);
+			for (int i=0; i<hm.size()-1; i++) {
+				if (hm.get(i)==num03) {
+					hm.remove(index);
+					index--;
+				}
+			}
 			index++;
-			
 			if(hm.size()==6) { break; }
 		}
 		System.out.println(hm);
