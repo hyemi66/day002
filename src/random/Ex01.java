@@ -44,6 +44,7 @@ public class Ex01 {
 			double ran = Math.random();
 			num03 = (int)(ran*6+1);
 			hm.put(index, num03);
+			index++;
 			
 			if(hm.size()==6) { break; }
 		}

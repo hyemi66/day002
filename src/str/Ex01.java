@@ -36,15 +36,15 @@ public class Ex01 {
 		System.out.println("변경 전 : "+str);
 		String changeStr = new String();
 		String[] cc = str.split("");
-		String[] cc1 = new String[str.length()];
 		for(int i=0; i<cc.length; i++) {
 			cc[i] = cc[i].toLowerCase();
 			if (i==0) { cc[i] = cc[i].toUpperCase(); }
-			else if (cc[i]==" " && cc[i+1]!=" ") {
-				int num = Integer.parseInt(cc[i+1]);
-				System.out.println(num);
+			if (i>0) {
+				if (cc[i-1].equals(" ")) {
+					cc[i] = cc[i].toUpperCase();
+				}
 			}
-			System.out.print(cc[i]);
+			changeStr += cc[i];
 		}
 		System.out.println(changeStr);
 		
